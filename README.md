@@ -2,7 +2,8 @@
 
 A responsive web-based Blackjack game built with HTML, CSS, and JavaScript. Players can enter their name, play Blackjack against the dealer, and track their high scores.
 
-![Blackjack Game Screenshot](https://via.placeholder.com/800x400/0f2027/ffffff?text=Blackjack+Game)
+![Blackjack Game Screenshot](<img width="596" height="755" alt="image" src="https://github.com/user-attachments/assets/a2f0fbfa-704d-44f2-baa1-8a9987c59921" />
+)
 
 ## Features
 
