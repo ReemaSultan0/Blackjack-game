@@ -1,0 +1,260 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #f8b500;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.player-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.high-score {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: #4fc3f7;
+    font-weight: bold;
+}
+
+.game-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.cards-container, .game-controls {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cards-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+    min-height: 120px;
+}
+
+.card {
+    width: 80px;
+    height: 120px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.card:before, .card:after {
+    position: absolute;
+    font-size: 1rem;
+}
+
+.card:before {
+    top: 5px;
+    left: 10px;
+}
+
+.card:after {
+    bottom: 5px;
+    right: 10px;
+    transform: rotate(180deg);
+}
+
+.card.hearts, .card.diamonds {
+    color: #e53935;
+}
+
+.card.spades, .card.clubs {
+    color: #000;
+}
+
+.card.hearts:before, .card.hearts:after { content: "♥"; }
+.card.diamonds:before, .card.diamonds:after { content: "♦"; }
+.card.clubs:before, .card.clubs:after { content: "♣"; }
+.card.spades:before, .card.spades:after { content: "♠"; }
+
+.sum-display {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #f8b500;
+}
+
+.message-display {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 15px 0;
+    min-height: 40px;
+    color: #4fc3f7;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+#start-btn {
+    background: #4caf50;
+}
+
+#new-card-btn {
+    background: #2196f3;
+}
+
+#reset-btn {
+    background: #f44336;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:disabled {
+    background: #555;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.name-form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 250px;
+    margin-right: 10px;
+}
+
+#submit-name {
+    background: #9c27b0;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.rules {
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.rules h2 {
+    color: #f8b500;
+    margin-bottom: 15px;
+}
+
+.rules ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.rules li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.rules li:before {
+    content: "•";
+    color: #4fc3f7;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+.debug-info {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: monospace;
+}
+
+@media (max-width: 600px) {
+    .game-area {
+        grid-template-columns: 1fr;
+    }
+    
+    .card {
+        width: 60px;
+        height: 90px;
+        font-size: 1.2rem;
+    }
+    
+    input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
